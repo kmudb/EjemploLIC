@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de HTML con CSS y Slider</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos CSS en línea */
+        h1 {
+            color: darkblue;
+        }
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado del documento -->
+    <header>
+        <h1>Título Principal</h1>
+        <nav>
+            <ul>
+                <li><a href="#seccion1">Sección 1</a></li>
+                <li><a href="#seccion2">Sección 2</a></li>
+                <li><a href="#seccion3">Sección 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Slider -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide" id="slide-1">
+                    <img src="https://via.placeholder.com/800x300?text=Imagen+1" alt="Imagen 1">
+                </div>
+                <div class="slide" id="slide-2">
+                    <img src="https://via.placeholder.com/800x300?text=Imagen+2" alt="Imagen 2">
+                </div>
+                <div class="slide" id="slide-3">
+                    <img src="https://via.placeholder.com/800x300?text=Imagen+3" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Sección 1 -->
+        <section id="seccion1">
+            <h2>Subtítulo de la Sección 1</h2>
+            <p>Este es un párrafo en la sección 1. HTML5 mejora la estructura semántica de los documentos.</p>
+        </section>
+
+        <!-- Sección 2 -->
+        <section id="seccion2">
+            <h2>Subtítulo de la Sección 2</h2>
+            <p>Este es otro párrafo en la sección 2.</p>
+
+            <!-- Artículo dentro de la sección -->
+            <article>
+                <h3>Artículo Relacionado</h3>
+                <p>Este es un artículo dentro de la sección 2. Los artículos pueden contener su propio contenido.</p>
+            </article>
+        </section>
+
+        <!-- Sección 3 -->
+        <section id="seccion3">
+            <h2>Subtítulo de la Sección 3</h2>
+            <p>Este es otro párrafo en la sección 3.</p>
+
+            <!-- Listas -->
+            <h3>Lista de Ejemplo</h3>
+            <ul>
+                <li>Elemento de lista 1</li>
+                <li>Elemento de lista 2</li>
+                <li>Elemento de lista 3</li>
+            </ul>
+
+            <ol>
+                <li>Primer elemento</li>
+                <li>Segundo elemento</li>
+                <li>Tercer elemento</li>
+            </ol>
+
+            <!-- Tabla -->
+            <table>
+                <caption>Tabla de Ejemplo</caption>
+                <thead>
+                    <tr>
+                        <th>Encabezado 1</th>
+                        <th>Encabezado 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dato 1</td>
+                        <td>Dato 2</td>
+                    </tr>
+                    <tr>
+                        <td>Dato 3</td>
+                        <td>Dato 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Sección de Complemento -->
+    <aside>
+        <h2>Información Adicional</h2>
+        <p>Este es un contenido adicional que se puede mostrar en un apartado.</p>
+    </aside>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Ejemplo de HTML5. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function changeSlide(step) {
+            currentSlide = (currentSlide + step + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Mostrar la primera diapositiva
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
