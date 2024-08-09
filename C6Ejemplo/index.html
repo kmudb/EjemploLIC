@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Tecnología</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">Inventario de Empresa de Tecnología</h1>
+    
+    <!-- Formulario para agregar o actualizar productos -->
+    <form id="formularioProducto" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-2">
+            <label for="idProducto" class="form-label">ID:</label>
+            <input type="number" class="form-control" id="idProducto" placeholder="ID del producto" required>
+            <div class="invalid-feedback">
+                Por favor, ingrese un ID válido.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="nombreProducto" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="nombreProducto" placeholder="Nombre del producto" required>
+            <div class="invalid-feedback">
+                Por favor, ingrese el nombre del producto.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="categoriaProducto" class="form-label">Categoría:</label>
+            <input type="text" class="form-control" id="categoriaProducto" placeholder="Categoría del producto" required>
+            <div class="invalid-feedback">
+                Por favor, ingrese la categoría del producto.
+            </div>
+        </div>
+        <div class="col-md-2">
+            <label for="cantidadProducto" class="form-label">Cantidad:</label>
+            <input type="number" class="form-control" id="cantidadProducto" placeholder="Cantidad" required>
+            <div class="invalid-feedback">
+                Por favor, ingrese la cantidad.
+            </div>
+        </div>
+        <div class="col-md-2">
+            <label for="precioProducto" class="form-label">Precio:</label>
+            <input type="number" class="form-control" id="precioProducto" placeholder="Precio" required>
+            <div class="invalid-feedback">
+                Por favor, ingrese el precio.
+            </div>
+        </div>
+        <div class="col-12 mt-3">
+            <button type="button" class="btn btn-primary" onclick="validarYProcesar()">Agregar/Actualizar Producto</button>
+        </div>
+    </form>
+
+    <!-- Botones para otras operaciones -->
+    <div class="mt-4">
+        <button class="btn btn-info" onclick="mostrarInventario()">Mostrar Inventario</button>
+        <button class="btn btn-danger" onclick="eliminarProducto()">Eliminar Producto</button>
+    </div>
+    
+    <h2 class="mt-4">Inventario:</h2>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="tablaInventario"></tbody>
+    </table>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="inventario.js"></script>
+</body>
+</html>
