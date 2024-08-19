@@ -35,31 +35,49 @@ function agregarOActualizarProducto() {
     }
 
     limpiarFormulario();
+    imprimirInventario();
 }
 
-// Función para mostrar todos los productos en el inventario en una tabla
-function mostrarInventario() {
-    let tablaInventario = document.getElementById("tablaInventario");
-    tablaInventario.innerHTML = "";
+// Función para imprimir todos los productos en el inventario en la pantalla usando document.write
+function imprimirInventario() {
+    let contenido = `
+        <div class='container mt-5'>
+            <h2>Inventario Actual</h2>
+            <table class='table table-striped mt-3'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
 
     inventario.forEach(producto => {
-        let fila = document.createElement("tr");
-
+        contenido += "<tr>";
         producto.forEach(dato => {
-            let celda = document.createElement("td");
-            celda.textContent = dato;
-            fila.appendChild(celda);
+            contenido += "<td>" + dato + "</td>";
         });
-
-        tablaInventario.appendChild(fila);
+        contenido += "</tr>";
     });
+
+    contenido += `
+                </tbody>
+            </table>
+        </div>
+    `;
+
+   document.getElementById('datos').innerHTML=contenido;
 }
 
 // Función para eliminar un producto del inventario
 function eliminarProducto() {
     let id = document.getElementById("idProducto").value;
     let indice = inventario.findIndex(producto => producto[0] == id);
-    
+
     if (indice !== -1) {
         alert("Producto eliminado: " + inventario[indice][1]);
         inventario.splice(indice, 1);
@@ -68,6 +86,7 @@ function eliminarProducto() {
     }
 
     limpiarFormulario();
+    imprimirInventario();
 }
 
 // Función para limpiar el formulario después de agregar o actualizar un producto
@@ -81,3 +100,18 @@ function limpiarFormulario() {
     let formulario = document.getElementById("formularioProducto");
     formulario.classList.remove('was-validated');
 }
+
+// Función para cargar el formulario inicial y el inventario
+function cargarContenido() {
+    fetch('formulario.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('contenido').innerHTML = html;
+            // Inicializa el inventario al cargar la página
+            imprimirInventario();
+        })
+        .catch(error => console.error('Error al cargar el formulario:', error));
+}
+
+// Cargar el contenido cuando la ventana se haya cargado
+window.onload = cargarContenido;
