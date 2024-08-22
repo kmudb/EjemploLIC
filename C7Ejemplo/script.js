@@ -87,5 +87,5 @@ function generarTablaPedidos() {
     
 }
 
-// Llenar los select con los productos disponibles al cargar la página
+// Llenar los select con los productos disponibles al cargar la página web
 window.onload = llenarSelects;
