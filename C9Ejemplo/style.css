@@ -1,0 +1,13 @@
+.button-container button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.output-container {
+    margin-top: 20px;
+}
+
+.output-container table {
+    margin-top: 20px;
+}
