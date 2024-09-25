@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Eventos del Mouse y Teclado</title>
+    <style>
+        #mouseArea {
+            width: 300px;
+            height: 200px;
+            background-color: lightgray;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #keyboardInput {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .mouseover-effect {
+            background-color: lightblue;
+        }
+
+        .mouseup-effect {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Eventos del Mouse y Teclado</h1>
+    
+    <!-- Area para detectar eventos del mouse -->
+    <div id="mouseArea">Área para el Mouse</div>
+    
+    <!-- Mostrar el resultado de los eventos -->
+    <p id="output">Interacción pendiente...</p>
+    
+    <!-- Input para detectar eventos del teclado -->
+    <input type="text" id="keyboardInput" placeholder="Escribe algo y presiona una tecla" />
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Videojuego</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #gameArea {
+            width: 500px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        #player {
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            position: absolute;
+            top: 180px;
+            left: 230px;
+        }
+        #obstacle {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            position: absolute;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mini Videojuego: Evita el Obstáculo</h1>
+    
+    <div id="gameArea">
+        <div id="player"></div>
+        <div id="obstacle"></div>
+    </div>
+
+    <p id="message">Usa las flechas del teclado para moverte.</p>
+
+    <script src="game.js"></script>
+</body>
+</html>
