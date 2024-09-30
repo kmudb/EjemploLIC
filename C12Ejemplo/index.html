@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países en Cuadrícula</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo" class="mt-5">Países</h1>
+        <div class="text-right my-3">
+            <button id="btn-es" class="btn btn-primary">Español</button>
+            <button id="btn-en" class="btn btn-secondary">Inglés</button>
+        </div>
+        <div id="grid-paises" class="row">
+            <!-- Los datos de la API se cargarán aquí -->
+        </div>
+    </div>
+
+    <!-- Modal para mostrar la información del país -->
+    <div class="modal fade" id="paisModal" tabindex="-1" aria-labelledby="paisModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paisModalLabel">Información del País</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="pais-bandera" src="" alt="Bandera" class="img-fluid mb-3">
+                    <p><strong id="label-nombre">Nombre:</strong> <span id="pais-nombre"></span></p>
+                    <p><strong id="label-capital">Capital:</strong> <span id="pais-capital"></span></p>
+                    <p><strong id="label-poblacion">Población:</strong> <span id="pais-poblacion"></span></p>
+                    <p><strong id="label-region">Región:</strong> <span id="pais-region"></span></p>
+                    <p><strong id="label-descripcion">Descipción:</strong> <span id="pais-descripcion"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
