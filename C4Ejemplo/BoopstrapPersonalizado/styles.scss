@@ -1,0 +1,50 @@
+// Sobrescribir variables de Bootstrap
+$primary: hsl(281, 70%, 53%); // Cambiar color primario a azul claro
+$secondary: hsl(155, 58%, 39%); // Cambiar color secundario a gris oscuro
+$font-family-base: 'Arial', sans-serif; // Cambiar fuente base
+$body-bg: #f4f4f4; // Fondo gris claro
+$body-color: #333; // Texto oscuro
+
+// Importar Bootstrap (asegúrate de que bootstrap.min.css esté descargado localmente)
+@import "bootstrap.min.css";
+
+// Personalizar el Navbar sin perder el estilo predeterminado
+.navbar-custom {
+  background-color: $secondary;  
+  .navbar-toggler {
+    border-color: lighten($secondary, 10%);
+    &:focus {
+      box-shadow: 0 0 5px lighten($primary, 20%);
+    }
+  }
+
+  .navbar-brand, .nav-link {
+    color: #fff !important;  // Texto blanco
+    &:hover {
+      color: lighten($primary, 20%) !important;  // Color más claro en hover
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin-left: 15px; // Espaciado entre elementos
+    }
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-color: #fff; // Toggler icon en blanco
+  }
+}
+
+// Estilos personalizados para otros componentes
+.custom-button {
+  background-color: $primary;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+}

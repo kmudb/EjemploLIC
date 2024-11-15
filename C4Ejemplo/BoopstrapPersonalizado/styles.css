@@ -1,0 +1,33 @@
+@import "bootstrap.min.css";
+.navbar-custom {
+  background-color: #2a9d6d;
+}
+.navbar-custom .navbar-toggler {
+  border-color: #34c589;
+}
+.navbar-custom .navbar-toggler:focus {
+  box-shadow: 0 0 5px #cc8aea;
+}
+.navbar-custom .navbar-brand, .navbar-custom .nav-link {
+  color: #fff !important;
+}
+.navbar-custom .navbar-brand:hover, .navbar-custom .nav-link:hover {
+  color: #cc8aea !important;
+}
+.navbar-custom .navbar-nav .nav-item {
+  margin-left: 15px;
+}
+.navbar-custom .navbar-light .navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.custom-button {
+  background-color: #a633db;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.custom-button:hover {
+  background-color: #8a21ba;
+}
